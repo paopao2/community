@@ -1,7 +1,6 @@
 <template name="home">
-
-    <header class="intro login">
-        <div class="intro-body">
+    <body>
+    <div class="intro">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -12,43 +11,52 @@
 
                 </div>
             </div>
-        </div>
-    </header>
-
-<script type="text/javascript">
-  WebFontConfig = {
-    google: { families: [ 'Montserrat:400,700,900,400' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })(); 
-</script>
-
+    </div>
+</body>
 </template>
 
-<template name="catogary">
+<template name="category">
     {{> header}}
 
-    <h2>What do you want to do today?</h2>
-    <button id="volunteer">Volunteer</button>
-    <button id="help">Get Help</button>
+    <body>
+        <div class="container">
+            <div class="row-centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>What do you want to do today?</h2>
+                </div>
+            </div>
+            <div class="row-centered">
+                <div class="col-md-10 col-md-offset-2" >
+                    <button class="btn btn-primary btn-lg">Volunteer</button>
+                    <button class="btn btn-primary btn-lg">Get Help</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
 
 </template>
 
 <template name="header">
-    <h1>Welcome !!   {{currentUser.services.facebook.name}} </h1>
-    <button id="logout">Logout</button>
+    <p class="header">Welcome !!   {{currentUser.services.facebook.name}}
+    <button class="header" id="logout">Logout</button>  </p>
 </template>
 
 <template name="volunteer">
-New request? {{> volunteerForm}}
-{{> currentHelpList}}
+    {{> header}}
+
+    <body>
+        <div class="container">
+            <div class = "row-centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2> How can the community help you today? </h2>
+
+                    {{> volunteerForm}}
+                    {{> currentHelpList}}
+                </div>
+            </div>
+        </div>
+    </body>
 </template>
 
 <template name="gethelp">
@@ -83,6 +91,7 @@ New request? {{> gethelpForm}}
         <div class="item">Start Date: <input type="datetime-local" id="startTime"/></div>
         <div class="item">End Date: <input type="datetime-local" id="endTime"/></div>
     </form>
+
 </template>
 
 <template name="gethelpForm">

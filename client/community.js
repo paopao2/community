@@ -1,7 +1,7 @@
 Router.map(function(){
     this.route('home', {path:'/'})
     this.route('login', {path: '/login'});
-    this.route('catogary', {path:'/catogary'});
+    this.route('category', {path:'/category'});
     this.route('volunteer', {path:'/volunteer'});
     this.route('gethelp', {path:'/gethelp'});
 });
@@ -42,7 +42,7 @@ Template.login.events({
 });
 
 Template.login.autoredirect = function(){
-        Router.go('catogary');
+        Router.go('category');
     };
 
   Template.header.events({
@@ -64,4 +64,18 @@ Template.login.autoredirect = function(){
       Router.go('gethelp');
     }
   });
+
+  // Google Fonts:
+  WebFontConfig = {
+    google: { families: [ 'Montserrat:400,700,900,400' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
 
