@@ -24,16 +24,31 @@ New request? {{> gethelpForm}}
 </template>
 
 <template name="currentHelpList">
+    <br><br>
     Need to get data from server
 </template>
 
 <template name="currentVolList">
+    <br><br>
     Need to get data from server
+      {{> listsssss}}
 </template>
 
 <template name="volunteerForm">
 
     <form id="vol-req">
+        <div class="item">Location: <input type="text" name="zip" placeholder="zip code"/></div>
+        <div class="item">Category:
+        <select id="category">
+            <option value="1">Gardening</option>
+            <option value="2">Shopping</option>
+            <option value="3">Companionship</option>
+            <option value="4">Car Ride</option>
+            <option value="5">Cleaning</option>
+        </select></div>
+        <div class="item">Description:<input type="text" name="descp"/></div>
+        <div class="item">Start Date: <input type="datetime-local" id="startTime"/></div>
+        <div class="item">End Date: <input type="datetime-local" id="endTime"/></div>
     </form>
 </template>
 
@@ -42,3 +57,6 @@ New request? {{> gethelpForm}}
     </form>
 </template>
 
+<template name="listsssss">
+    {{> tasks}}
+</template>
