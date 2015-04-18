@@ -77,19 +77,21 @@ New request? {{> gethelpForm}}
 
 <template name="volunteerForm">
 
-    <form id="vol-req">
-        <div class="item">Location: <input type="text" name="zip" placeholder="zip code"/></div>
-        <div class="item">Category:
-        <select id="category">
-            <option value="1">Gardening</option>
-            <option value="2">Shopping</option>
-            <option value="3">Companionship</option>
-            <option value="4">Car Ride</option>
-            <option value="5">Cleaning</option>
-        </select></div>
-        <div class="item">Description:<input type="text" name="descp"/></div>
-        <div class="item">Start Date: <input type="datetime-local" id="startTime"/></div>
-        <div class="item">End Date: <input type="datetime-local" id="endTime"/></div>
+    <form class="form-horizontal" id="vol-req" role="form">
+        <fieldset>
+            <p><label class="item" for="Location">Location: </label><input type="text" name="zip" placeholder="zip code"/></p>
+            <p><label class="item" for="Category">Category:</label>
+            <select id="category">
+                <option value="1">Gardening</option>
+                <option value="2">Shopping</option>
+                <option value="3">Companionship</option>
+                <option value="4">Car Ride</option>
+                <option value="5">Cleaning</option>
+            </select></p>
+            <p><label class="item" for="Description">Description:</label><input type="text" name="descp"/></p>
+            <p><label class="item" for="StartDate">Start Date: </label><input type="datetime-local" id="startTime"/></p>
+            <p><label class="item" for="EndDate">End Date: </label><input type="datetime-local" id="endTime"/></p>
+        </fieldset>
     </form>
 
 </template>
