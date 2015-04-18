@@ -43,7 +43,7 @@ Template.login.autoredirect = function(){
     }
   });
 
-  Template.catogary.events({
+  Template.category.events({
     'click #volunteer': function() {
       Router.go('volunteer');
     },
