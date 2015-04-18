@@ -1,0 +1,44 @@
+<template name="catogary">
+    {{> header}}
+
+    <h2>What do you want to do today?</h2>
+    <button id="volunteer">Volunteer</button>
+    <button id="help">Get Help</button>
+</template>
+
+
+
+<template name="header">
+    <h1>Welcome !!   {{currentUser.services.facebook.name}} </h1>
+    <button id="logout">Logout</button>
+</template>
+
+<template name="volunteer">
+New request? {{> volunteerForm}}
+{{> currentHelpList}}
+</template>
+
+<template name="gethelp">
+New request? {{> gethelpForm}}
+{{> currentVolList}}
+</template>
+
+<template name="currentHelpList">
+    Need to get data from server
+</template>
+
+<template name="currentVolList">
+    Need to get data from server
+</template>
+
+<template name="volunteerForm">
+
+    <form id="vol-req">
+    </form>
+</template>
+
+<template name="gethelpForm">
+    <form id="help-req">
+    </form>
+</template>
+
