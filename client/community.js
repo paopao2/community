@@ -9,19 +9,6 @@ Router.map(function(){
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
-
-  // Template.hello.helpers({
-  //   counter: function () {
-  //     return Session.get('counter');
-  //   }
-  // });
-
-  // Template.hello.events({
-  //   'click button': function () {
-  //     // increment the counter when button is clicked
-  //     Session.set('counter', Session.get('counter') + 1);
-  //   }
-  // });
 }
 
 if (Meteor.isServer) {
@@ -65,7 +52,7 @@ Template.login.autoredirect = function(){
     }
   });
 
-  // Google Fonts:
+
   WebFontConfig = {
     google: { families: [ 'Montserrat:400,700,900,400' ] }
   };
@@ -77,5 +64,12 @@ Template.login.autoredirect = function(){
     wf.async = 'true';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
-  })(); 
+  })();
+
+VolunteerPosts = new Mongo.Collection("volunteerposts");
+Template.listing.helpers({
+    datas: function () {
+      return VolunteerPosts.find();
+    }
+  });
 
