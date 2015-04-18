@@ -1,5 +1,6 @@
 Router.map(function(){
-    this.route('login', {path: '/'});
+    this.route('home', {path:'/'})
+    this.route('login', {path: '/login'});
     this.route('catogary', {path:'/catogary'});
     this.route('volunteer', {path:'/volunteer'});
     this.route('gethelp', {path:'/gethelp'});
@@ -21,8 +22,6 @@ if (Meteor.isClient) {
   //     Session.set('counter', Session.get('counter') + 1);
   //   }
   // });
-
-
 }
 
 if (Meteor.isServer) {
@@ -65,3 +64,4 @@ Template.login.autoredirect = function(){
       Router.go('gethelp');
     }
   });
+
