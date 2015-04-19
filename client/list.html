@@ -77,8 +77,23 @@
 </template>
 
 <template name="gethelp">
-New request? {{> gethelpForm}}
-{{> currentVolList}}
+
+    {{> header}}
+
+    <body>
+        <div class="container">
+            <div class = "row-centered">
+                New request? {{> gethelpForm}}
+            </div>
+            <div class = "row-centered">
+                <div class="col-md-10 col-md-offset-1">
+                    <h2> People need a little kindness with: </h2>
+                    {{> currentVolList}}
+                </div>
+            </div>
+        </div>
+    </body>
+
 </template>
 
 <template name="currentHelpList">
@@ -87,21 +102,39 @@ New request? {{> gethelpForm}}
 </template>
 
 <template name="currentVolList">
-    <br><br>
-    Need to get data from server
-      {{> listing}}
+    {{> listing}}
 </template>
 
 <template name="listing">
-    this is my list:
-    {{#each datas}}
-        <p> {{zip}}</p>
-        <p> {{category}}</p>
-        <p> {{description}} </p>
-        <p> {{starttime}} </p>
-        <p> {{endtime}} </p>
-    {{/each}}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Who?</th>
+                <th>Zip Code</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each datas}}
+            <tr>
+                <th scope="row"><img src="Avatar1.png" width="50px"/></th>
+                <td> {{zip}}</td>
+                <td> {{category}}</td>
+                <td> {{description}} </td>
+                <td> {{starttime}} </td>
+                <td> {{endtime}} </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
 </template>
+
+
 
 <template name="volunteerForm">
 
