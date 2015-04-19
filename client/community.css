@@ -81,3 +81,7 @@ fieldset p{
 #volunteer {
     margin-left: -180px;
 }
+
+table td {
+    width: 200px;
+}
