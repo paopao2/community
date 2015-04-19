@@ -98,9 +98,6 @@ Template.volunteerForm.events({
 
   },
 
-  'click #chat': function() {
-      Router.go('chat');
-    }
 });
 
 Template.gethelpForm.events({
@@ -114,10 +111,6 @@ Template.gethelpForm.events({
     var endTime = event.target.endTime.value.toString();
     GetHelpPosts.insert({name: name, zip: zip, category: category, description: description, starttime:startTime, endtime:endTime});
   },
-  'click #chat': function() {
-    Router.go('chat');
-  }
-
 });
 
 Template.messages.helpers({
@@ -129,11 +122,9 @@ Template.messages.helpers({
 Template.input.events = {
   'keydown input#message' : function (event) {
   if (event.which == 13) { // 13 is the enter key event
-  
-    console.log("I hit enter");
 
     var message = document.getElementById('message');
-    var name = 'empty';
+    var name = document.getElementById('login-name-link').text;
 
     if (message.value != '') {
       Messages.insert({
@@ -148,3 +139,14 @@ Template.input.events = {
   }
   }
 }
+
+Template.listingHelp.events({
+  'click #chat': function() {
+      Router.go('chat');
+    }
+});
+Template.listingVol.events({
+  'click #chat': function() {
+      Router.go('chat');
+    }
+});
