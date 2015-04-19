@@ -97,15 +97,14 @@
 </template>
 
 <template name="currentHelpList">
-    <br><br>
-    Need to get data from server
+    {{> listingVol}}
 </template>
 
 <template name="currentVolList">
-    {{> listing}}
+    {{> listingHelp}}
 </template>
 
-<template name="listing">
+<template name="listingVol">
 
     <table class="table table-hover">
         <thead>
@@ -131,10 +130,35 @@
             {{/each}}
         </tbody>
     </table>
-
 </template>
 
+<template name="listingHelp">
 
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Who?</th>
+                <th>Zip Code</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each datas}}
+            <tr>
+                <th scope="row"><img src="Avatar1.png" width="50px"/></th>
+                <td> {{zip}}</td>
+                <td> {{category}}</td>
+                <td> {{description}} </td>
+                <td> {{starttime}} </td>
+                <td> {{endtime}} </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>
 
 <template name="volunteerForm">
 
@@ -152,13 +176,29 @@
             <p><label class="item" for="Description">Description:</label><input type="text" name="descp"/></p>
             <p><label class="item" for="StartDate">Start Date: </label><input type="datetime-local" id="startTime"/></p>
             <p><label class="item" for="EndDate">End Date: </label><input type="datetime-local" id="endTime"/></p>
+            <input type="submit" value="Enter">
         </fieldset>
     </form>
 
 </template>
 
 <template name="gethelpForm">
-    <form id="help-req">
+        <form class="form-horizontal" id="vol-req" role="form">
+        <fieldset>
+            <p><label class="item" for="Location">Location: </label><input type="text" name="zip" placeholder="zip code"/></p>
+            <p><label class="item" for="Category">Category:</label>
+            <select id="category">
+                <option value="1">Gardening</option>
+                <option value="2">Shopping</option>
+                <option value="3">Companionship</option>
+                <option value="4">Car Ride</option>
+                <option value="5">Cleaning</option>
+            </select></p>
+            <p><label class="item" for="Description">Description:</label><input type="text" name="descp"/></p>
+            <p><label class="item" for="StartDate">Start Date: </label><input type="datetime-local" id="startTime"/></p>
+            <p><label class="item" for="EndDate">End Date: </label><input type="datetime-local" id="endTime"/></p>
+            <input type="submit" value="Enter">
+        </fieldset>
     </form>
 </template>
 

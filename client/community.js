@@ -66,10 +66,45 @@ Template.login.autoredirect = function(){
     s.parentNode.insertBefore(wf, s);
   })();
 
+//todo: can combine them into one database table
 VolunteerPosts = new Mongo.Collection("volunteerposts");
-Template.listing.helpers({
+Template.listingVol.helpers({
     datas: function () {
       return VolunteerPosts.find();
     }
   });
 
+GetHelpPosts = new Mongo.Collection("gethelpposts");
+Template.listingHelp.helpers({
+    datas: function () {
+      return GetHelpPosts.find();
+    }
+  });
+
+Template.volunteerForm.events({
+ 'submit form': function(event){
+    event.preventDefault();
+    var name = "Narine";
+    var zip = event.target.zip.value;
+    var category = event.target.category.value;
+    var description = event.target.descp.value;
+    var startTime = event.target.startTime.value.toString();
+    var endTime = event.target.endTime.value.toString();
+    console.log(zip.value);
+    VolunteerPosts.insert({name: name, zip: zip, category: category, description: description, starttime:startTime, endtime:endTime});
+
+  }
+});
+
+Template.gethelpForm.events({
+ 'submit form': function(event){
+    event.preventDefault();
+    var name = "Chang";
+    var zip = event.target.zip.value;
+    var category = event.target.category.value;
+    var description = event.target.descp.value;
+    var startTime = event.target.startTime.value.toString();
+    var endTime = event.target.endTime.value.toString();
+    GetHelpPosts.insert({name: name, zip: zip, category: category, description: description, starttime:startTime, endtime:endTime});
+  }
+});
