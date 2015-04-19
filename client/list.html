@@ -83,7 +83,7 @@
     <body>
         <div class="container">
             <div class = "row-centered">
-                New request? {{> gethelpForm}}
+                {{> gethelpForm}}
             </div>
             <div class = "row-centered">
                 <div class="col-md-10 col-md-offset-1">
@@ -105,10 +105,12 @@
 </template>
 
 <template name="listingVol">
+    <br><br>
 
     <table class="table table-hover">
         <thead>
             <tr>
+                <th>Icon</th>
                 <th>Who?</th>
                 <th>Zip Code</th>
                 <th>Category</th>
@@ -121,6 +123,7 @@
             {{#each datas}}
             <tr>
                 <th scope="row"><img src="Avatar1.png" width="50px"/></th>
+                <td> {{name}} </td>
                 <td> {{zip}}</td>
                 <td> {{category}}</td>
                 <td> {{description}} </td>
@@ -133,10 +136,11 @@
 </template>
 
 <template name="listingHelp">
-
+<br><br>
     <table class="table table-hover">
         <thead>
             <tr>
+                <th>Icon</th>
                 <th>Who?</th>
                 <th>Zip Code</th>
                 <th>Category</th>
@@ -149,6 +153,7 @@
             {{#each datas}}
             <tr>
                 <th scope="row"><img src="Avatar1.png" width="50px"/></th>
+                <td> {{name}} </td>
                 <td> {{zip}}</td>
                 <td> {{category}}</td>
                 <td> {{description}} </td>
@@ -167,12 +172,13 @@
             <p><label class="item" for="Location">Location: </label><input type="text" name="zip" placeholder="zip code"/></p>
             <p><label class="item" for="Category">Category:</label>
             <select id="category">
-                <option value="1">Gardening</option>
-                <option value="2">Shopping</option>
-                <option value="3">Companionship</option>
-                <option value="4">Car Ride</option>
-                <option value="5">Cleaning</option>
+                <option value="Gardening">Gardening</option>
+                <option value="Shoppping">Shopping</option>
+                <option value="Companionship">Companionship</option>
+                <option value="Car Ride">Car Ride</option>
+                <option value="Cleaning">Cleaning</option>
             </select></p>
+            <p><label class="item" for="Description">Avatar: </label><input type="text" name="username"/></p>
             <p><label class="item" for="Description">Description:</label><input type="text" name="descp"/></p>
             <p><label class="item" for="StartDate">Start Date: </label><input type="datetime-local" id="startTime"/></p>
             <p><label class="item" for="EndDate">End Date: </label><input type="datetime-local" id="endTime"/></p>
@@ -183,17 +189,18 @@
 </template>
 
 <template name="gethelpForm">
-        <form class="form-horizontal" id="vol-req" role="form">
+        <form class="form-horizontal" id="help-req" role="form">
         <fieldset>
             <p><label class="item" for="Location">Location: </label><input type="text" name="zip" placeholder="zip code"/></p>
             <p><label class="item" for="Category">Category:</label>
             <select id="category">
-                <option value="1">Gardening</option>
-                <option value="2">Shopping</option>
-                <option value="3">Companionship</option>
-                <option value="4">Car Ride</option>
-                <option value="5">Cleaning</option>
+                <option value="Gardening">Gardening</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Companionship">Companionship</option>
+                <option value="Car Ride">Car Ride</option>
+                <option value="Cleaning">Cleaning</option>
             </select></p>
+            <p><label class="item" for="Description">Avatar: </label><input type="text" name="username"/></p>
             <p><label class="item" for="Description">Description:</label><input type="text" name="descp"/></p>
             <p><label class="item" for="StartDate">Start Date: </label><input type="datetime-local" id="startTime"/></p>
             <p><label class="item" for="EndDate">End Date: </label><input type="datetime-local" id="endTime"/></p>

@@ -28,7 +28,7 @@ input.textbox-300{
 }
 
 select{
-  width:180px;
+  width:175px;
 }
 
 fieldset p{
@@ -66,4 +66,18 @@ fieldset p{
     text-align:left;
     /* inline-block space fix */
     margin-right:-4px;
+}
+
+#startTime, #endTime {
+      margin-left: 46px;
+      width: 219px;
+      height: 25px;
+}
+
+#help-req fieldset {
+      margin-left: 230px;
+}
+
+#volunteer {
+    margin-left: -180px;
 }

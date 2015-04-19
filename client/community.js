@@ -84,7 +84,7 @@ Template.listingHelp.helpers({
 Template.volunteerForm.events({
  'submit form': function(event){
     event.preventDefault();
-    var name = "Narine";
+    var name = event.target.username.value;
     var zip = event.target.zip.value;
     var category = event.target.category.value;
     var description = event.target.descp.value;
@@ -99,7 +99,7 @@ Template.volunteerForm.events({
 Template.gethelpForm.events({
  'submit form': function(event){
     event.preventDefault();
-    var name = "Chang";
+    var name = event.target.username.value;
     var zip = event.target.zip.value;
     var category = event.target.category.value;
     var description = event.target.descp.value;
